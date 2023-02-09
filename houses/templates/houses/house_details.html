@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+{% load thumbnail %}
+{% load humanize %}          <!--import of a library containing methods for humanizing the data displayed on the site-->
+{% load static %}
+
+{% block application %}
+<h1>{{ house.name }}</h1>
+
+<section class="house_details">
+    <ul>
+        {% thumbnail house.image "500x280" crop="center" as image %}
+        <li><img src="{{ image.url }}" alt="Дом {{ house.name }}"></li>
+        {% endthumbnail %}
+        <li>{{ house.description }}</li>
+
+        <!--intcomma method, from the humanize library, divides numbers into groups of three digits-->
+        <li>{{ house.price|intcomma }} &#8381; for daily</li>
+    </ul>
+    <div class="clearfix"></div>
+</section>
+
+<section class="order">
+    <h2>Заявка</h2>
+
+    <!--template tag of the condition that is executed if the send html variable is set to true,
+            otherwise, the content of the else block is displayed-->
+    {% if send %}
+    <img src="{% static 'images/check_circle.svg' %}">
+    <p>Заявка принята</p>
+
+    {% else %}
+    <form class="order_form" method="post">
+        {% csrf_token %}                  <!--generation of an additional field protecting the form from csrf attacks-->
+
+        <!--generation of html form body from django form,
+            such form can be presented in three variants form.as_p, form.as_ul, form.as_table-->
+        {{ form.as_ul }}
+        
+        <button type="submit">Отправить</button>
+    </form>
+    {% endif %}
+</section>
+{% endblock %}

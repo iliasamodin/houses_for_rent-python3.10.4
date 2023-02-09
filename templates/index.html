@@ -1,0 +1,26 @@
+{% load static %}   <!--import of a template tag designed to specify url-addresses of a relative path to static files-->
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Дом у моря</title>
+
+        <!--import css style files into html template using static template tag-->
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+              rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        <!--template tag responsible for inserting the specified sub-template at the location of the tag-->
+        {% include "header.html" %}
+        <article>
+            <!--logical block for settering of meanings from representations and their HTML templates-->
+            {% block application %}{% endblock %}
+        </article>
+        {% include "footer.html" %}
+    </body>
+</html>

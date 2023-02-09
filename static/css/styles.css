@@ -1,0 +1,228 @@
+html {
+	font-family: "Roboto", "PT Sans", sans-serif;
+	font-size: 18px;
+	text-align: left;
+}
+
+body {
+	background-color: #f5f5f5;
+	color: #2a2a2a;
+	line-height: 1.333;
+	margin: 0px auto;
+	width: 1366px;
+}
+
+/*-------------------------------------------------*/
+
+strong, b {
+	font-weight: bold;
+}
+
+em, i {
+	font-style: italic;
+}
+
+/*-------------------------------------------------*/
+
+a {
+	color: #2a2a2a;
+	text-decoration: none;
+}
+
+a:hover, a:visited:hover {
+	opacity: 0.9;
+}
+
+a:active, a:visited:active {
+	opacity: 0.5;
+}
+
+/*-------------------------------------------------*/
+
+header {
+	background-color: #eeedec;
+	box-sizing: border-box;
+	height: 100px;
+	padding: 19px 570px;
+}
+
+footer {
+	background-color: #eeedec;
+	box-sizing: border-box;
+	height: 50px;
+	padding: 13px 400px;
+}
+
+footer li {
+	display: inline-block;
+}
+
+footer li:first-child {
+	margin-right: 220px;
+}
+
+/*-------------------------------------------------*/
+
+article h1, 
+article h2 {
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 1;
+	margin: 30px 0px;
+	text-align: center;
+}
+
+/*-------------------------------------------------*/
+
+article > .filter_form {
+	margin: 0px auto;
+	width: 965px;
+}
+
+article > .filter_form li {
+	display: inline-block;
+}
+
+article > .filter_form li:nth-child(n+4) {
+	margin-left: 25px;
+}
+
+article > .filter_form button {
+	background-color: #2cd37b;
+	border: 1px solid #5a5a5a;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	height: 30px;
+	margin: 15px 448px 0px;
+	width: 70px;
+}
+
+/*-------------------------------------------------*/
+
+article > .houses_list {
+	margin: 30px auto;
+	width: 1000px;
+}
+
+article > .houses_list > li {
+	display: inline-block;
+	margin: 0px 45px 30px 0px;
+	position: relative;
+	width: 300px;
+}
+
+article > .houses_list > li:nth-child(3n) {
+	margin-right: 0px;
+}
+
+article > .houses_list > li:nth-child(n+10) {
+	margin-bottom: 0px;
+}
+
+article > .houses_list > li > ul > li:nth-child(1) {
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	bottom: 15px;
+	box-shadow: 1px 1px 1px white;
+	left: 50px;
+	padding: 3px;
+	position: absolute;
+	z-index: 1;
+}
+
+article > .houses_list > li > ul > li:nth-child(2) {
+	background-color: #2a2a2a;
+	border-radius: 5px;
+	color: white;
+	padding: 5px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 1;
+}
+
+article > .houses_list > li > ul > li:nth-child(1) > a {
+	color: white;
+	font-size: 20px;
+}
+
+article > .houses_list > li > ul > li:nth-child(2):hover {
+	opacity: 0.8;
+}
+
+/*-------------------------------------------------*/
+
+article > .house_details {
+	height: 280px;
+	margin: 0px auto;
+	width: 1000px;
+}
+
+article > .house_details > ul > li:first-child {
+	float: left;
+}
+
+article > .house_details > ul > li:nth-child(2) {
+	height: 220px;
+	margin: 0px 30px 0px 530px;
+	position: relative;
+	top: 15px;
+}
+
+article > .house_details > ul > li:nth-child(3) {
+	border-bottom: 1px solid #2a2a2a;
+	border-right: 1px solid #2a2a2a;
+	box-shadow: 1px 1px 1px #2a2a2a;
+	margin-left: 530px;
+	padding: 3px;
+	position: relative;
+	top: 15px;
+	width: 160px;
+}
+
+article > .house_details > ul > li:first-child > img {
+	border-radius: 3px;
+}
+
+article > .house_details .clearfix {
+	clear: both;
+}
+
+/*-------------------------------------------------*/
+
+article > .order {
+	margin: 0px auto;
+	width: 1000px;
+}
+
+article > .order > h2 {
+	margin-bottom: 25px;
+}
+
+article > .order > img {
+	margin: 35px 0px 0px 475px;
+}
+
+article > .order > p {
+	font-size: 22px;
+	line-height: 1;
+	margin: 0px 0px 68px 418px;
+}
+
+article > .order li {
+	margin: 0px 0px 5px 275px;
+	text-align: right;
+	width: 300px;
+}
+
+article > .order button {
+	background-color: #2cd37b;
+	border: 1px solid #5a5a5a;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	height: 30px;
+	margin: 10px 450px 30px;
+	width: 100px;
+}

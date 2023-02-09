@@ -1,0 +1,44 @@
+{% extends "index.html" %}            <!--designation that the current template is the expansion of the main template-->
+{% load thumbnail %}                 <!--importing a set of template filters and tags from the sorl-thumbnail library-->
+{% load humanize %}
+
+{% block application %}                                                              <!--beginning of the subtemplate-->
+<h1>Наши дома</h1>
+
+<!--for forms with get data passing method, csrf_token is not needed, 
+    since csrf attacks for the get method are not applied-->
+<form class="filter_form" method="get">
+    <b>Цена</b>
+    {{ form.as_ul }}
+    <button type="submit">Поиск</button>
+</form>
+
+<ul class="houses_list">
+    {% for house in houses %}         <!--iterating over list with django model objects in html body to place on page-->
+    <li>
+        <ul class="house_characteristics">
+            <li>
+                <!--the url template tag accepts the url name from the urlpatterns list
+                    and additional values necessary for the address-->
+                <a href="{% url 'house' house_id=house.id %}">{{ house.name }}</a>
+            </li>
+
+            <!--putting attribute value of django model object into list html elements-->
+            <li>{{ house.price|intcomma }} &#8381;</li>
+
+            <!--the thumbnail tag gets the path to the image from the attribute of the model object,
+                compresses the image to the specified dimensions,
+                cropping the borders that do not match the specified aspect ratio, and saves the thumbnail in the cache,
+                placing the thumbnail in the html variable-->
+            {% thumbnail house.image "300x170" crop="center" as image %}
+            <li>
+                <a href="{% url 'house' house_id=house.id %}">
+                    <img src="{{ image.url }}" alt="Дом {{ house.name }}">      <!--specifying path via html variable-->
+                </a>
+            </li>
+            {% endthumbnail %}
+        </ul>
+    </li>
+    {% endfor %}                                                                                     <!--end of cycle-->
+</ul>
+{% endblock %}
