@@ -87,6 +87,11 @@ article > .filter_form li:nth-child(n+4) {
 	margin-left: 25px;
 }
 
+article > .filter_form li #id_ordering {
+    width: 40px;
+    height: 20px;
+}
+
 article > .filter_form button {
 	background-color: #2cd37b;
 	border: 1px solid #5a5a5a;
